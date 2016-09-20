@@ -10,6 +10,11 @@ fiftysix::workhorse()
 
 gg <- gahner_plot()
 
+gg <- gg + 
+  geom_vline(xintercept = as.numeric(c(ymd("2011-09-11"), ymd("2015-06-18"))), color = "red") +
+  annotate("text", x = c(ymd("2011-09-11"), ymd("2015-06-18")), y = -1, 
+           label = c("FV11", "FV15"))
+
 ggplotly(gg)
 
 ```
